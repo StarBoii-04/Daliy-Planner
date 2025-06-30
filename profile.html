@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Daily Planner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Daily<span>Planner</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="planner.html">My Planner</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="#" id="logout-btn" class="btn-logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img id="profile-image" src="images/default-avatar.png" alt="Profile Avatar">
+                        <div class="avatar-overlay">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h2 id="profile-name">John Doe</h2>
+                        <p id="profile-email">john.doe@example.com</p>
+                        <p>Member since: <span id="member-since">January 2025</span></p>
+                    </div>
+                </div>
+                
+                <div class="profile-tabs">
+                    <button class="tab-btn active" data-tab="personal">Personal Info</button>
+                    <button class="tab-btn" data-tab="preferences">Preferences</button>
+                    <button class="tab-btn" data-tab="stats">Statistics</button>
+                </div>
+                
+                <div class="tab-content active" id="personal">
+                    <form id="personal-form">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" name="full-name" value="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-email-input">Email</label>
+                            <input type="email" id="profile-email-input" name="email" value="john.doe@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" value="+1 (555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="timezone">Timezone</label>
+                            <select id="timezone" name="timezone">
+                                <option value="utc-8">Pacific Time (UTC-8)</option>
+                                <option value="utc-5">Eastern Time (UTC-5)</option>
+                                <option value="utc+0">UTC</option>
+                                <option value="utc+1">Central European Time (UTC+1)</option>
+                                <option value="utc+8">China Standard Time (UTC+8)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+                
+                <div class="tab-content" id="preferences">
+                    <form id="preferences-form">
+                        <div class="form-group">
+                            <label for="theme">Theme</label>
+                            <select id="theme" name="theme">
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                                <option value="system">System Default</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="time-format">Time Format</label>
+                            <select id="time-format" name="time-format">
+                                <option value="12">12-hour (AM/PM)</option>
+                                <option value="24">24-hour</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="start-day">Week Starts On</label>
+                            <select id="start-day" name="start-day">
+                                <option value="sunday">Sunday</option>
+                                <option value="monday">Monday</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Notifications</label>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="email-notif" name="email-notif" checked>
+                                <label for="email-notif">Email Notifications</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="browser-notif" name="browser-notif" checked>
+                                <label for="browser-notif">Browser Notifications</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Preferences</button>
+                    </form>
+                </div>
+                
+                <div class="tab-content" id="stats">
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <h3>Tasks Completed</h3>
+                            <div class="stat-value">127</div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: 75%"></div>
+                            </div>
+                            <p>75% completion rate</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Productive Hours</h3>
+                            <div class="stat-value">42</div>
+                            <p>This month</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Streak</h3>
+                            <div class="stat-value">8</div>
+                            <p>days in a row</p>
+                        </div>
+                    </div>
+                    <div class="activity-chart">
+                        <h3>Activity Overview</h3>
+                        <div class="chart-placeholder">
+                            <p>Chart visualization will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Daily<span>Planner</span></h2>
+                    <p>Plan your day with time blocks</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="planner.html">My Planner</a></li>
+                        <li><a href="benefits.html">Benefits</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="uses.html">Uses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Account</h3>
+                    <ul>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="#" id="footer-logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DailyPlanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

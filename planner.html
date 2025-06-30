@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Planner - Daily Planner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Daily<span>Planner</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="planner.html" class="active">My Planner</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="#" id="logout-btn" class="btn-logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="planner-section">
+        <div class="container">
+            <div class="planner-header">
+                <div class="date-navigation">
+                    <button id="prev-day" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+                    <h2 id="current-date">Thursday, April 18, 2025</h2>
+                    <button id="next-day" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="planner-actions">
+                    <button id="today-btn" class="btn btn-secondary">Today</button>
+                    <button id="add-block-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Time Block</button>
+                </div>
+            </div>
+
+            <div class="planner-view">
+                <div class="time-labels">
+                    <div class="time-label">6:00 AM</div>
+                    <div class="time-label">7:00 AM</div>
+                    <div class="time-label">8:00 AM</div>
+                    <div class="time-label">9:00 AM</div>
+                    <div class="time-label">10:00 AM</div>
+                    <div class="time-label">11:00 AM</div>
+                    <div class="time-label">12:00 PM</div>
+                    <div class="time-label">1:00 PM</div>
+                    <div class="time-label">2:00 PM</div>
+                    <div class="time-label">3:00 PM</div>
+                    <div class="time-label">4:00 PM</div>
+                    <div class="time-label">5:00 PM</div>
+                    <div class="time-label">6:00 PM</div>
+                    <div class="time-label">7:00 PM</div>
+                    <div class="time-label">8:00 PM</div>
+                    <div class="time-label">9:00 PM</div>
+                </div>
+                <div class="time-blocks" id="time-blocks-container">
+                    <!-- Time blocks will be added here dynamically -->
+                    <div class="time-block" style="top: 60px; height: 90px;" data-id="1">
+                        <div class="block-header">
+                            <span class="block-time">7:00 AM - 8:30 AM</span>
+                            <div class="block-actions">
+                                <button class="edit-block"><i class="fas fa-edit"></i></button>
+                                <button class="delete-block"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <h4 class="block-title">Morning Exercise</h4>
+                        <p class="block-description">30 min cardio + 30 min strength training</p>
+                        <div class="block-category health">Health</div>
+                    </div>
+
+                    <div class="time-block" style="top: 180px; height: 60px;" data-id="2">
+                        <div class="block-header">
+                            <span class="block-time">9:00 AM - 10:00 AM</span>
+                            <div class="block-actions">
+                                <button class="edit-block"><i class="fas fa-edit"></i></button>
+                                <button class="delete-block"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <h4 class="block-title">Team Meeting</h4>
+                        <p class="block-description">Weekly progress update</p>
+                        <div class="block-category work">Work</div>
+                    </div>
+
+                    <div class="time-block" style="top: 240px; height: 120px;" data-id="3">
+                        <div class="block-header">
+                            <span class="block-time">10:00 AM - 12:00 PM</span>
+                            <div class="block-actions">
+                                <button class="edit-block"><i class="fas fa-edit"></i></button>
+                                <button class="delete-block"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <h4 class="block-title">Project Development</h4>
+                        <p class="block-description">Focus on implementing new features</p>
+                        <div class="block-category work">Work</div>
+                    </div>
+
+                    <div class="time-block" style="top: 360px; height: 60px;" data-id="4">
+                        <div class="block-header">
+                            <span class="block-time">12:00 PM - 1:00 PM</span>
+                            <div class="block-actions">
+                                <button class="edit-block"><i class="fas fa-edit"></i></button>
+                                <button class="delete-block"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <h4 class="block-title">Lunch Break</h4>
+                        <p class="block-description">Lunch with Alex at Cafe Bistro</p>
+                        <div class="block-category personal">Personal</div>
+                    </div>
+
+                    <div class="time-block" style="top: 420px; height: 180px;" data-id="5">
+                        <div class="block-header">
+                            <span class="block-time">1:00 PM - 4:00 PM</span>
+                            <div class="block-actions">
+                                <button class="edit-block"><i class="fas fa-edit"></i></button>
+                                <button class="delete-block"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <h4 class="block-title">Deep Work Session</h4>
+                        <p class="block-description">Complete client proposal and documentation</p>
+                        <div class="block-category work">Work</div>
+                    </div>
+
+                    <div class="time-block" style="top: 600px; height: 60px;" data-id="6">
+                        <div class="block-header">
+                            <span class="block-time">4:00 PM - 5:00 PM</span>
+                            <div class="block-actions">
+                                <button class="edit-block"><i class="fas fa-edit"></i></button>
+                                <button class="delete-block"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <h4 class="block-title">Email & Admin</h4>
+                        <p class="block-description">Catch up on emails and administrative tasks</p>
+                        <div class="block-category work">Work</div>
+                    </div>
+
+                    <div class="time-block" style="top: 720px; height: 90px;" data-id="7">
+                        <div class="block-header">
+                            <span class="block-time">6:00 PM - 7:30 PM</span>
+                            <div class="block-actions">
+                                <button class="edit-block"><i class="fas fa-edit"></i></button>
+                                <button class="delete-block"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <h4 class="block-title">Dinner & Family Time</h4>
+                        <p class="block-description">Family dinner and quality time</p>
+                        <div class="block-category personal">Personal</div>
+                    </div>
+
+                    <div class="time-block" style="top: 810px; height: 120px;" data-id="8">
+                        <div class="block-header">
+                            <span class="block-time">7:30 PM - 9:30 PM</span>
+                            <div class="block-actions">
+                                <button class="edit-block"><i class="fas fa-edit"></i></button>
+                                <button class="delete-block"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <h4 class="block-title">Online Course</h4>
+                        <p class="block-description">Complete Module 3 of Web Development course</p>
+                        <div class="block-category education">Education</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for adding/editing time blocks -->
+    <div class="modal" id="block-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Add Time Block</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="block-form">
+                    <div class="form-group">
+                        <label for="block-title-input">Title</label>
+                        <input type="text" id="block-title-input" name="title" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="start-time">Start Time</label>
+                            <input type="time" id="start-time" name="start-time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="end-time">End Time</label>
+                            <input type="time" id="end-time" name="end-time" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="block-description">Description</label>
+                        <textarea id="block-description" name="description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="block-category">Category</label>
+                        <select id="block-category" name="category">
+                            <option value="work">Work</option>
+                            <option value="personal">Personal</option>
+                            <option value="health">Health</option>
+                            <option value="education">Education</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <input type="hidden" id="block-id" value="">
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancel-block">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="save-block">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Daily<span>Planner</span></h2>
+                    <p>Plan your day with time blocks</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="planner.html">My Planner</a></li>
+                        <li><a href="benefits.html">Benefits</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="uses.html">Uses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Account</h3>
+                    <ul>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="#" id="footer-logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DailyPlanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/planner.js"></script>
+</body>
+</html>
